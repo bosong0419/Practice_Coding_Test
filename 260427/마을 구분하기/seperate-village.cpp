@@ -8,7 +8,7 @@ int dy[4] = {0, -1, 0, 1}; // NWSE
 
 
 
-int dfs(int x, int y, const vector<vector<int>>& graph, vector<vector<bool>>& visit, const int n, int& person) {
+void dfs(int x, int y, const vector<vector<int>>& graph, vector<vector<bool>>& visit, const int n, int& person) {
     
     for(int i = 0; i < 4; i++) {
         int new_x = x + dx[i];
@@ -20,7 +20,7 @@ int dfs(int x, int y, const vector<vector<int>>& graph, vector<vector<bool>>& vi
             dfs(new_x, new_y, graph, visit, n, person);
         }
     }
-    return person;
+    return;
 }
 
 int main() {
@@ -42,7 +42,7 @@ int main() {
                 count++;
                 visit[i][j] = true;
                 int person = 1;
-                person = dfs(i, j, graph, visit, n, person);
+                dfs(i, j, graph, visit, n, person);
                 v.push_back(person);
             }
         }
