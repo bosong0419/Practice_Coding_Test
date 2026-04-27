@@ -36,7 +36,7 @@ int main() {
     }
     
 
-    int max_K = 0;
+    int max_K = 1;
     int max_count = 0;
     for(int p = K - 1; p >= 1; p--) { // K == 1일때 확인
         int count = 0;
