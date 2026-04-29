@@ -33,7 +33,7 @@ int main() {
 
     vector<vector<int>> visit(n, vector<int>(n, 0));
     int max_gold = 0;
-    for(int K = 1; K <= n; K++) {
+    for(int K = 0; K <= n; K++) {
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
                 int gold_count = 0;
