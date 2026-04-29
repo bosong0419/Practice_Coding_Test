@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-int run_length_encoding(string str) {
+int run_length_encoding(const string& str) {
     string encoding_str;
     bool new_variable = true;
     int count = 0;
@@ -14,7 +14,7 @@ int run_length_encoding(string str) {
             new_variable = false;
         }
         count++;
-        if(str[i] != str[i + 1] || i == str.length() - 1) {
+        if(i == str.length() - 1 || str[i] != str[i + 1]) {
             encoding_str += to_string(count);
             count = 0;
             new_variable = true;
