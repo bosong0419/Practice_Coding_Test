@@ -22,7 +22,7 @@ int main() {
                     bool is_minus = false;
                     for(int i = y1; i <= y2; i++)
                         for(int j = x1; j <= x2; j++) {
-                            if(grid[i][j] < 0) is_minus = true;
+                            if(grid[i][j] <= 0) is_minus = true;
                         }
                     if(!is_minus) {
                         max_size = max(max_size, (y2 - y1 + 1) * (x2 - x1 + 1));
