@@ -10,6 +10,12 @@ int main() {
         for(auto& a: row)
             cin >> a;
     
+    if(n == 1) {
+        if(m == 1) cout << "2" << "\n";
+        else cout << "0" << "\n";
+        return 0;
+    }
+
     int count = 0;
     for(int i = 0; i < n; i++) {
         int conti = 1;
