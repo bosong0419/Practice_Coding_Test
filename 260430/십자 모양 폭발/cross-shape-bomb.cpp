@@ -12,7 +12,7 @@ void boom(int r, int c, int n, vector<vector<int>>& grid) {
     }
 }
 
-void gravity(int r, int c, int n, vector<vector<int>>& grid) {
+void gravity(int n, vector<vector<int>>& grid) {
     for(int j = 0; j < n; j++) {
         int write_idx = n - 1;
         for(int read_idx = n - 1; read_idx >= 0; read_idx--) {
@@ -38,7 +38,7 @@ int main() {
     cin >> r >> c;
     r--; c--;
     boom(r, c, n, grid);
-    gravity(r, c, n, grid);
+    gravity(n, grid);
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++)
             cout << grid[i][j] << " ";
