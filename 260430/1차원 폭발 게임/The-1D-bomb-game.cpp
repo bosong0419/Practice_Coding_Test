@@ -35,12 +35,8 @@ void erase_bomb(vector<int>& v, int m) {
             consec = 1;
         }
     }
-    for(int i = v.size() - 1; i >= 0; i--) {
-        if(erase_idx.empty()) return;
-        if(i == erase_idx.back().first) {
-            v.erase(v.begin() + erase_idx.back().first, v.begin() + erase_idx.back().second);
-            erase_idx.pop_back();
-        }
+    for(int i = erase_idx.size() - 1; i >= 0; i--) {
+        v.erase(v.begin() + erase_idx[i].first, v.begin() + erase_idx[i].second);
     }
 }
 
