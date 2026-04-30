@@ -2,13 +2,6 @@
 #include <vector>
 using namespace std;
 
-void copy(vector<vector<int>>& copy_grid, const vector<vector<int>>& grid) {
-    int n = copy_grid.size();
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < n; j++)
-            copy_grid[i][j] = grid[i][j];
-}
-
 void boom(int r, int c, vector<vector<int>>& copy_grid) {
     int n = copy_grid.size();
     int len = copy_grid[r][c];
@@ -67,8 +60,8 @@ int main() {
     int max_pair = 0;
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            vector<vector<int>> copy_grid(n, vector<int>(n));
-            copy(copy_grid, grid);
+            if(!grid[i][j]) continue;
+            vector<vector<int>> copy_grid = grid;
             boom(i, j, copy_grid);
             gravity(copy_grid);
             max_pair = max(max_pair, count_pair(copy_grid));
