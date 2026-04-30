@@ -40,13 +40,6 @@ int count_pair(vector<vector<int>>& copy_grid) {
     int n = copy_grid.size();
     int count = 0;
     if(n == 1) return 0;
-    if(n == 2) {
-        if(copy_grid[0][0] == copy_grid[0][1] && copy_grid[0][0]) count++;
-        if(copy_grid[1][0] == copy_grid[1][1] && copy_grid[1][0]) count++;
-        if(copy_grid[0][0] == copy_grid[1][0] && copy_grid[0][0]) count++;
-        if(copy_grid[0][1] == copy_grid[1][1] && copy_grid[0][1]) count++;
-        return count;
-    }
 
     for(int i = 0 ; i < n; i++) {
         for(int j = 0; j < n - 1; j++) {
